@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TYPE = {
-    primary: ' text-white bg-red-600 hover:bg-red-700',
+    primary: ' text-white bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] hover:from-[--btn-primary-hover-bg-from] hover:to-[--btn-primary-hover-bg-to] dark:from-[--btn-primary-bg-dark-from] dark:to-[--btn-primary-bg-dark-to] dark:hover:from-[--btn-primary-hover-bg-dark-from] dark:hover:to-[--btn-primary-hover-bg-dark-to] active:translate-y-[4px] active:translate-x-[-2px] active:shadow-none shadow-[-2px_3px_4px_1px_rgba(0,0,0,0.2)] dark:shadow-[-2px_3px_4px_1px_rgba(255,255,255,0.2)] dark:active:shadow-none',
     outline: ' text-red-400 bg-white border-[1px] border-red-600 hover:bg-red-50',
     text: ' hover:underline',
 }
@@ -15,9 +15,22 @@ const SIZE = {
     xl: ' py-[14px] px-4 text-2xl min-w-[140px]'
 }
 
-function Button({ to, href, onClick, leftIcon, rightIcon, disabled = false, children, size = 'md', text = false, primary = false, outline = false, className, ...passProps }) {
+function Button({
+    to,
+    href,
+    onClick,
+    leftIcon,
+    rightIcon,
+    disabled = false,
+    children, size = 'md',
+    text = false,
+    primary = false,
+    outline = false,
+    className,
+    ...passProps }) {
+
     let Comp = 'button';
-    let buttonClassName = `inline-flex items-center justify-center font-bold rounded ${className || ''} ${disabled ? 'pointer-events-none select-none opacity-50' : 'cursor-pointer'}`;
+    let buttonClassName = `inline-flex items-center justify-center font-bold rounded transition-all ${className || ''} ${disabled ? 'pointer-events-none select-none opacity-50' : 'cursor-pointer'}`;
 
     if (primary) {
         buttonClassName += TYPE.primary;
@@ -25,7 +38,7 @@ function Button({ to, href, onClick, leftIcon, rightIcon, disabled = false, chil
     else if (outline) {
         buttonClassName += TYPE.outline;
     }
-    else if( text) {
+    else if (text) {
         buttonClassName += TYPE.text;
     }
 
@@ -56,7 +69,7 @@ function Button({ to, href, onClick, leftIcon, rightIcon, disabled = false, chil
         ...passProps,
     };
 
-    if(disabled) {
+    if (disabled) {
         delete props.onClick;
     }
 

@@ -1,7 +1,7 @@
 import { SET_THEME } from "./constants";
 
 const initState = {
-    theme: localStorage.theme ? localStorage.theme : 'light',
+    theme: handleInitTheme(),
 
 }
 
@@ -17,7 +17,18 @@ function reducer(state, action) {
     }
 }
 
-const handleChangeTheme = (theme) => {
+function handleInitTheme() {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+    } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+    }
+    return localStorage.theme;
+}
+
+function handleChangeTheme(theme) {
     localStorage.theme = theme === 'light' ? 'dark' : 'light';
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
