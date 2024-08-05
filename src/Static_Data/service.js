@@ -9,6 +9,7 @@ const services = [
         back: {
             title: 'Phun Chân Mày Thẩm Mỹ',
             description: 'Phun chân mày giúp tôn lên đường nét khuôn mặt, mang lại vẻ đẹp tự nhiên và sắc sảo.',
+            isNew: true,
         }
     },
     {
@@ -18,6 +19,7 @@ const services = [
         back: {
             title: 'Xăm Môi Thẩm Mỹ',
             description: 'Xăm môi giúp đôi môi trở nên quyến rũ hơn với màu sắc tự nhiên, tươi tắn và lâu phai.',
+            isNew: true,
         }
     },
     {
@@ -27,6 +29,7 @@ const services = [
         back: {
             title: 'Massage Body',
             description: 'Massage body giúp thư giãn cơ thể, giảm căng thẳng và cải thiện tuần hoàn máu.',
+            isNew: true,
         }
     },
     {
@@ -36,6 +39,7 @@ const services = [
         back: {
             title: 'Gội Đầu Dưỡng Sinh',
             description: 'Gội đầu dưỡng sinh giúp thư giãn da đầu, giảm căng thẳng và kích thích mọc tóc.',
+            isNew: false,
         }
     },
     {
@@ -45,6 +49,7 @@ const services = [
         back: {
             title: 'Dịch Vụ Làm Nail',
             description: 'Dịch vụ làm nail mang lại đôi tay và chân xinh đẹp, gọn gàng và thời thượng.',
+            isNew: false,
         }
     },
     {
@@ -54,6 +59,7 @@ const services = [
         back: {
             title: 'Nặn Mụn Chuyên Nghiệp',
             description: 'Dịch vụ nặn mụn giúp làn da trở nên mịn màng, sạch sẽ và khỏe mạnh hơn.',
+            isNew: false,
         }
     },
     {
@@ -63,6 +69,7 @@ const services = [
         back: {
             title: 'Uốn Tóc Nữ',
             description: 'Uốn tóc nữ giúp tạo kiểu tóc bồng bềnh, quyến rũ, mang lại phong cách mới mẻ và tự tin.',
+            isNew: false,
         }
     },
     {
@@ -72,6 +79,7 @@ const services = [
         back: {
             title: 'Làm Đẹp Da Mặt',
             description: 'Dịch vụ đắp mặt nạ giúp nuôi dưỡng và làm sáng da, mang lại làn da mịn màng và rạng rỡ.',
+            isNew: false,
         }
     },
 ];

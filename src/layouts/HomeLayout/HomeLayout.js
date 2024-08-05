@@ -41,7 +41,7 @@ const HomeLayout = ({ children }) => {
             <div
                 ref={btnGoToTopRef}
                 onClick={handleGoToTop}
-                className="fixed items-center justify-center hidden rounded-full cursor-pointer ring-white ring-1 w-14 h-14 bottom-20 right-6 md:right-12"
+                className="fixed z-50 items-center justify-center hidden rounded-full cursor-pointer ring-white ring-1 w-14 h-14 bottom-20 right-6 md:right-12"
             >
                 <div
                     className="flex items-center justify-center w-[calc(100%-8px)] rounded-full cursor-pointer h-[calc(100%-8px)] bg-white"

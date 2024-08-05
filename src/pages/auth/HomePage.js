@@ -1,9 +1,14 @@
 import ImageSlider from "../../components/Slides/ImageSlider";
 import FlipCard from "../../components/flip_card/FlipCard";
-import { services, slides } from "../../Static_Data/";
+import { services } from "../../Static_Data/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import InfoMember from "../../components/InfoMember/InfoMember";
+import SwiperCube from "../../components/Swiper/SwiperCube";
+import SwiperCoverflow from "../../components/Swiper/SwiperCoverflow";
+
+import collection from "../../Static_Data/collection";
 
 const HomePage = () => {
 
@@ -16,7 +21,7 @@ const HomePage = () => {
     return (
         <div className="min-h-screen">
             <div className="w-full h-[50vh] xl:h-[700px] mx-auto">
-                <ImageSlider slides={slides} autoPlay />
+                <ImageSlider autoPlay />
             </div>
             <div className="py-12 px-4 md:px-12 2xl:px-44 bg-[--primary-bg-color] dark:bg-[--primary-bg-dark-color-1]">
                 <div className="flex flex-col items-center justify-center gap-4">
@@ -37,6 +42,35 @@ const HomePage = () => {
                         <FlipCard key={indexService} data={dataFlip} flip={isFlip} />
                     )}
                 </div>
+            </div>
+            <div className="py-12 px-4 md:px-12 2xl:px-44 text-gray-800 bg-white dark:bg-[--primary-bg-dark-color-2] dark:text-[--text-dark-color]">
+                <div className="flex flex-col items-center justify-center gap-4">
+                    <div className="font-sans text-base uppercase dark:text-white">Giới thiệu</div>
+                    <div className="text-3xl font-bold text-center font-play_write">Thu Liễu Beauty Academy</div>
+                </div>
+
+                <InfoMember />
+            </div>
+            <div className="py-12 px-4 md:px-12 2xl:px-44 text-gray-800 bg-[--primary-bg-color] dark:bg-[--primary-bg-dark-color-1] dark:text-[--text-dark-color]">
+                <div className="flex flex-col items-center justify-center gap-2 lg:gap-5">
+                    <div className="font-sans text-base text-white uppercase">Bộ sưu tập</div>
+                    <div className="text-3xl font-bold text-center text-gray-200 font-play_write">Khám Phá Sự Hoàn Hảo</div>
+                    <div className="grid w-full grid-cols-3 mt-12 overflow-hidden">
+                        <div className="w-[96%] h-28 sm:h-44 lg:h-64 xl:h-[300px] place-self-start">
+                            <SwiperCube data={collection.lip} delayAuto={3000} />
+                        </div>
+                        <div className="w-[96%] h-28 place-self-center sm:h-44 lg:h-64 xl:h-[300px]">
+                            <SwiperCube data={collection.eyebrow} delayAuto={3500} />
+                        </div>
+                        <div className="w-[96%] h-28 sm:h-44 lg:h-64 xl:h-[300px] place-self-end">
+                            <SwiperCube data={collection.nail} delayAuto={4000} />
+                        </div>
+                    </div>
+                    <div className="w-full py-4 bg-[--primary-bg-color-2] dark:bg-[--primary-bg-dark-color-2] h-36 sm:h-60 lg:h-72 xl:h-80">
+                        <SwiperCoverflow data={collection.work} />
+                    </div>
+                </div>
+
             </div>
         </div>
     );

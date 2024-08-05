@@ -36,6 +36,26 @@
   src: url('/src/assets/fonts/PlaywriteBEVLG-Regular.ttf');
 }
 
+@font-face {
+  font-family: dancing;
+  src: url('/src/assets/fonts/DancingScript-Medium.ttf');
+}
+
+@font-face {
+  font-family: dancing_regular;
+  src: url('/src/assets/fonts/DancingScript-Regular.ttf');
+}
+
+@font-face {
+  font-family: dancing_sermibold;
+  src: url('/src/assets/fonts/DancingScript-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: dancing_bold;
+  src: url('/src/assets/fonts/DancingScript-Bold.ttf');
+}
+
 .font-pt-serif-bold {
   font-family: 'pt_serif_bold';
 }
@@ -46,6 +66,22 @@
 
 .font-play_write {
   font-family: 'PBEV';
+}
+
+.font-dancing {
+  font-family: 'dancing';
+}
+
+.font-dancing-regular {
+  font-family: 'dancing_regular';
+}
+
+.font-dancing-sermibold {
+  font-family: 'dancing_sermibold';
+}
+
+.font-dancing-bold {
+  font-family: 'dancing_bold';
 }
 
 /* width */
@@ -87,3 +123,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
