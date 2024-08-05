@@ -2,7 +2,6 @@ import { SET_THEME } from "./constants";
 
 const initState = {
     theme: handleInitTheme(),
-
 }
 
 function reducer(state, action) {

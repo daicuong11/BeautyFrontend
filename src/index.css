@@ -22,11 +22,6 @@
 }
 
 @font-face {
-  font-family: pt_serif_bold;
-  src: url('/src/assets/fonts/PTSerif-Bold.ttf');
-}
-
-@font-face {
   font-family: pt_serif_bold_italic;
   src: url('/src/assets/fonts/PTSerif-BoldItalic.ttf');
 }
@@ -36,28 +31,10 @@
   src: url('/src/assets/fonts/PlaywriteBEVLG-Regular.ttf');
 }
 
-@font-face {
-  font-family: dancing;
-  src: url('/src/assets/fonts/DancingScript-Medium.ttf');
-}
-
-@font-face {
-  font-family: dancing_regular;
-  src: url('/src/assets/fonts/DancingScript-Regular.ttf');
-}
-
-@font-face {
-  font-family: dancing_sermibold;
-  src: url('/src/assets/fonts/DancingScript-SemiBold.ttf');
-}
 
 @font-face {
   font-family: dancing_bold;
   src: url('/src/assets/fonts/DancingScript-Bold.ttf');
-}
-
-.font-pt-serif-bold {
-  font-family: 'pt_serif_bold';
 }
 
 .font-pt-serif-bold-italic {
@@ -66,18 +43,6 @@
 
 .font-play_write {
   font-family: 'PBEV';
-}
-
-.font-dancing {
-  font-family: 'dancing';
-}
-
-.font-dancing-regular {
-  font-family: 'dancing_regular';
-}
-
-.font-dancing-sermibold {
-  font-family: 'dancing_sermibold';
 }
 
 .font-dancing-bold {
@@ -92,16 +57,19 @@
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
+  border-radius: 999px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color); 
+  border-radius: 999px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color); 
+  border-radius: 999px;
 }
 
 * {
