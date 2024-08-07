@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const TYPE = {
     primary: ' text-white bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] hover:from-[--btn-primary-hover-bg-from] hover:to-[--btn-primary-hover-bg-to] dark:from-[--btn-primary-bg-dark-from] dark:to-[--btn-primary-bg-dark-to] dark:hover:from-[--btn-primary-hover-bg-dark-from] dark:hover:to-[--btn-primary-hover-bg-dark-to] active:translate-y-[4px] active:translate-x-[-2px] active:shadow-none shadow-[-2px_3px_4px_1px_rgba(0,0,0,0.2)] dark:shadow-[-2px_3px_4px_1px_rgba(255,255,255,0.2)] dark:active:shadow-none',
-    outline: ' text-red-400 bg-white border-[1px] border-red-600 hover:bg-red-50',
+    outline: ' text-[--primary-color] bg-pink-100 dark:bg-[#bfdbfe] border-[1px] border-pink-500 dark:border-[--btn-primary-bg-dark-to] dark:text-[--btn-primary-bg-dark-to] hover:bg-gradient-to-tr hover:from-[--btn-primary-bg-from] hover:to-[--btn-primary-bg-to] hover:text-white hover:dark:text-white transition-all duration-300 ease-linear dark:hover:from-[--btn-primary-bg-dark-from] dark:hover:to-[--btn-primary-bg-dark-to]',
     text: ' hover:underline',
 }
 

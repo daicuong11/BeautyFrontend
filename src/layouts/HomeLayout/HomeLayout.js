@@ -41,12 +41,12 @@ const HomeLayout = ({ children }) => {
             <div
                 ref={btnGoToTopRef}
                 onClick={handleGoToTop}
-                className="fixed z-50 items-center justify-center hidden rounded-full cursor-pointer ring-white ring-1 w-14 h-14 bottom-20 right-6 md:right-12"
+                className="fixed z-30 items-center justify-center hidden w-12 h-12 rounded-full cursor-pointer ring-white ring-1 md:w-14 md:h-14 bottom-20 right-6 md:right-12"
             >
                 <div
                     className="flex items-center justify-center w-[calc(100%-8px)] rounded-full cursor-pointer h-[calc(100%-8px)] bg-white"
                 >
-                    <FontAwesomeIcon className='text-xl text-[#F07167] dark:text-[--btn-primary-bg-dark-from]' icon={faArrowUp} />
+                    <FontAwesomeIcon className='text-lg md:text-xl text-[#F07167] dark:text-[--btn-primary-bg-dark-from]' icon={faArrowUp} />
                 </div>
             </div>
         </>

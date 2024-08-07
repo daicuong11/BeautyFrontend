@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -10,11 +10,13 @@ import ImageView from '../ImageView/ImageView';
 
 const SwiperCoverflow = ({ data, delayAuto = 2500 }) => {
     const [isOpenImageView, setIsOpenImageView] = useState(false);
-    const [isAutoPlay, setIsAutoPlay] = useState(true);
     const [currentImage, setCurrentImage] = useState('');
+    const swiperRef = useRef(null);
 
     const handleOpenImageView = (image) => {
-        setIsAutoPlay(false);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.autoplay.stop(); // Stop autoplay
+        }
         setCurrentImage(image);
         setIsOpenImageView(true);
     };
@@ -22,14 +24,16 @@ const SwiperCoverflow = ({ data, delayAuto = 2500 }) => {
     const handleCloseImageView = () => {
         setIsOpenImageView(false);
         setCurrentImage('');
-        setIsAutoPlay(true);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.autoplay.start(); // Resume autoplay
+        }
     };
 
     return (data &&
         <>
             <Swiper
                 effect={'coverflow'}
-                autoplay={isAutoPlay ? { delay: delayAuto, disableOnInteraction: false } : false}
+                autoplay={{ delay: delayAuto, disableOnInteraction: false }}
                 loop
                 grabCursor={true}
                 centeredSlides={true}
@@ -43,6 +47,7 @@ const SwiperCoverflow = ({ data, delayAuto = 2500 }) => {
                 }}
                 modules={[EffectCoverflow, Pagination, Autoplay]}
                 className="w-full h-full"
+                ref={swiperRef}
             >
                 {data.map((image, index) =>
                     <SwiperSlide key={index} className="w-full h-full">

@@ -28,7 +28,7 @@ const InfoMember = ({ member }) => {
                 <h1 className="mb-2 text-3xl font-dancing-bold">
                     {members.fullName}
                 </h1>
-                <div className="">
+                <div>
                     <div className="font-semibold text-sm inline-block font-pt-serif-bold-italic px-3 py-1 rounded-tl-xl rounded-br-xl text-white bg-[--primary-color] dark:bg-slate-800">
                         <span className="mr-2">
                             <FontAwesomeIcon icon={faPenNib} />
@@ -36,7 +36,10 @@ const InfoMember = ({ member }) => {
                         {members.personalMessage}
                     </div>
                 </div>
-                <p >{members.description}</p>
+                {members.descriptions.length > 0 &&
+                    members.descriptions.map((description, indexDes) =>
+                        <p key={indexDes}>{description}</p>
+                    )}
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-row items-center gap-4">
                         <span className="w-4">

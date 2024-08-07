@@ -8,6 +8,7 @@ export { default as uon_toc_nu_img } from './uon_toc_nu.jpg';
 export { default as dap_mat_na_img } from './dap_mat_na.jpg';
 export { default as avatar_img } from './avatar.jpg';
 export { default as skill_design_hairs_img } from './skill_design_hairs.jpg';
+export { default as logo_img } from './logo_transparent.png';
 
 export { default as nail_1_img } from './images_nail/nail1.jpg';
 export { default as nail_2_img } from './images_nail/nail2.jpg';

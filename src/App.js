@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import HomeLayout from './layouts/HomeLayout';
 
 import { publicRoutes } from './routes';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           />
         })}
         <Route path='/admin' element={<HomeLayout />}>
+        </Route>
+        <Route path="*" element={
+          <NotFoundPage />} >
         </Route>
       </Routes>
     </BrowserRouter>

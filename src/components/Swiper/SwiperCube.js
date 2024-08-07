@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -10,36 +10,44 @@ import ImageView from '../ImageView/ImageView';
 
 const SwiperCube = ({ data, delayAuto = 2500 }) => {
     const [isOpenImageView, setIsOpenImageView] = useState(false);
-    const [isAutoPlay, setIsAutoPlay] = useState(true);
     const [currentImage, setCurrentImage] = useState('');
+    const swiperRef = useRef(null);
 
     const handleOpenImageView = (image) => {
-        setIsAutoPlay(false);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.autoplay.stop();
+        }
         setCurrentImage(image);
         setIsOpenImageView(true);
     };
 
     const handleCloseImageView = () => {
-        setCurrentImage('');
-        setIsAutoPlay(true);
         setIsOpenImageView(false);
+        setCurrentImage('');
+        if (swiperRef.current) {
+            swiperRef.current.swiper.autoplay.start();
+        }
     };
 
     return (data &&
         <>
             <Swiper
                 effect={'cube'}
-                autoplay={isAutoPlay && { delay: delayAuto, disableOnInteraction: false }}
+                autoplay={{ delay: delayAuto, disableOnInteraction: false }}
                 loop
                 grabCursor={true}
                 modules={[EffectCube, Pagination, Autoplay]}
                 className="w-full h-full"
+                ref={swiperRef}
             >
                 {data.map((image, index) =>
                     <SwiperSlide key={index} className="w-full h-full">
                         <img
                             onClick={() => handleOpenImageView(image.url)}
-                            className="block object-cover w-full h-full" src={image.url} alt="" />
+                            className="block object-cover w-full h-full"
+                            src={image.url}
+                            alt={`Slide ${index}`}
+                        />
                     </SwiperSlide>
                 )}
             </Swiper>
