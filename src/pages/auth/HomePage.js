@@ -8,6 +8,7 @@ import InfoMember from "../../components/InfoMember/InfoMember";
 import SwiperCube from "../../components/Swiper/SwiperCube";
 import SwiperCoverflow from "../../components/Swiper/SwiperCoverflow";
 import Button from "../../components/Button";
+import Booth from "../../components/Booth/Booth";
 
 const HomePage = () => {
 
@@ -38,8 +39,8 @@ const HomePage = () => {
                 </div>
                 <div className="flex flex-row flex-wrap justify-center gap-4 mt-6 sm:gap-8">
                     {services.map((dataFlip, indexService) =>
-                        <div className="mx-auto">
-                            <FlipCard key={indexService} data={dataFlip} flip={isFlip} />
+                        <div key={indexService} className="mx-auto">
+                            <FlipCard data={dataFlip} flip={isFlip} />
                         </div>
                     )}
                 </div>
@@ -83,13 +84,12 @@ const HomePage = () => {
                 </div>
 
             </div>
-            <div id="cosmetics" className="py-16 px-4 sm:px-8 md:px-12 2xl:px-44 text-gray-900 bg-[--primary-bg-color-2] dark:bg-[--primary-bg-dark-color-2] dark:text-[--text-dark-color]">
+            <div id="cosmetics" className="py-16 px-4 sm:px-8 md:px-12 2xl:px-44 text-gray-900 bg-white dark:bg-[--primary-bg-dark-color-2] dark:text-[--text-dark-color]">
                 <div className="flex flex-col items-center justify-center gap-4">
                     <div className="font-sans text-base uppercase dark:text-white">Mỹ phẩm</div>
                     <div className="sm:text-3xl font-bold text-center text-2xl font-play_write text-slate-700 dark:text-[--text-dark-color]">Vẻ Đẹp Từ Thiên Nhiên</div>
                 </div>
-
-                <div className="min-h-screen"></div>
+                <Booth />
             </div>
             <div id="courses" className="py-16 px-4 sm:px-8 md:px-12 2xl:px-44 text-gray-900 bg-[--primary-bg-color-2] dark:bg-[--primary-bg-dark-color-2] dark:text-[--text-dark-color]">
                 <div className="flex flex-col items-center justify-center gap-4">

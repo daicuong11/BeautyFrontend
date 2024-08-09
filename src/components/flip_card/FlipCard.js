@@ -14,7 +14,7 @@ const FlipCard = ({ data, flip = false }) => {
                         <h1 className="text-base font-bold md:text-xl">{data.back.title}</h1>
                         <p className="hidden mt-1 text-base text-gray-700 md:block dark:text-gray-300">{data.back.description}</p>
                         <div className="flex-1"></div>
-                        <p className="mb-3 text-xs font-bold text-center text-red-600 dark:text-red-500 font-play_write">1.000.000 VNĐ</p>
+                        <p className="mb-3 text-xs font-bold text-center text-red-600 dark:text-red-500 font-play_write">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(1000000)}</p>
                         <Button
                             primary
                             className='hidden text-xs md:text-sm group-hover:block'

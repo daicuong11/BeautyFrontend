@@ -61,5 +61,9 @@ export { default as slide_3_img } from './images_slide/slide_3.jpg';
 export { default as slide_4_img } from './images_slide/slide_4.jpg';
 export { default as slide_5_img } from './images_slide/slide_5.jpg';
 
+export { default as cosmetic_1_img } from './images_cosmetics/kem.jpg';
 
+export { default as cosmetic_discount_1_img } from './images_cosmetics_discount/discount_1.png';
+export { default as cosmetic_discount_2_img } from './images_cosmetics_discount/discount_2.png';
+export { default as cosmetic_discount_3_img } from './images_cosmetics_discount/discount_3.png';
 

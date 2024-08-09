@@ -27,15 +27,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                     </div>
                 </div>
                 <div className="flex flex-col w-full pl-4 md:text-base text-lg my-2 pb-2 border-b-2 dark:bg-[--primary-bg-dark-color-1] dark:text-white">
-                    <Link to="home"
-                        spy={true}
-                        smooth={true}
-                        offset={-68}
-                        duration={500} className="relative hover:cursor-pointer hover:text-[--primary-color] px-3 py-[12px] group">
-                        Trang chủ
-                        <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                    </Link>
-                    <Link to="services"
+                    <Link onClick={onClose} to="services"
                         spy={true}
                         smooth={true}
                         offset={-68}
@@ -43,7 +35,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                         Dịch vụ
                         <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
                     </Link>
-                    <Link to="info"
+                    <Link onClick={onClose} to="info"
                         spy={true}
                         smooth={true}
                         offset={-68}
@@ -51,7 +43,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                         Giới thiệu
                         <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
                     </Link>
-                    <Link to="collections"
+                    <Link onClick={onClose} to="collections"
                         spy={true}
                         smooth={true}
                         offset={-68}
@@ -59,7 +51,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                         Bộ sưu tập
                         <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
                     </Link>
-                    <Link to="cosmetics"
+                    <Link onClick={onClose} to="cosmetics"
                         spy={true}
                         smooth={true}
                         offset={-68}
@@ -67,7 +59,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                         Mỹ phẩm
                         <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
                     </Link>
-                    <Link to="courses"
+                    <Link onClick={onClose} to="courses"
                         spy={true}
                         smooth={true}
                         offset={-68}
@@ -75,7 +67,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                         Đào tạo
                         <div className="absolute -bottom-0 left-0 h-[3px] bg-gradient-to-tr from-[--btn-primary-bg-from] to-[--btn-primary-bg-to] w-0 group-hover:w-full transition-all duration-500 ease-in-out"></div>
                     </Link>
-                    <Link to="contact"
+                    <Link onClick={onClose} to="contact"
                         spy={true}
                         smooth={true}
                         offset={-68}
