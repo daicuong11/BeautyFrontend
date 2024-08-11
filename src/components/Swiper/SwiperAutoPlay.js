@@ -20,25 +20,25 @@ const SwiperAutoPlay = ({ slides }) => {
             }}
             loop
             modules={[Autoplay, Pagination, Navigation]}
-            className="w-full rounded-md h-72 bg-gradient-to-br from-[#2D82B5] to-[#53A6D8]"
+            className="w-full h-full rounded-md lg:rounded-xl bg-gradient-to-br from-[#2D82B5] to-[#53A6D8]"
         >
             {slides && slides.map((item, index) => (
                 <SwiperSlide key={index}>
-                    <div className="grid grid-cols-1 p-2 rounded-md md:grid-cols-2">
-                        <div className="flex flex-col w-full p-8">
-                            <div className="mt-6 text-2xl font-bold text-white">
+                    <div className="grid w-full h-full grid-cols-1 p-2 rounded-md lg:rounded-lg md:grid-cols-2">
+                        <div className="flex flex-col justify-between p-8">
+                            <div className="mt-5 text-2xl font-bold text-white md:mt-6">
                                 {item.title}
                             </div>
-                            <div className="flex-1 my-4 text-base text-slate-100">
+                            <div className="text-base text-slate-100">
                                 {item.description}
                             </div>
-                            <div className="flex-1">
+                            <div className="">
                                 <div className="hover:text-[#2D82B5] hover:bg-white transition-all inline-block text-white border-[3px] rounded-full px-3 py-[4px] border-white font-bold uppercase text-sm cursor-pointer">
                                     Xem ngay
                                 </div>
                             </div>
                         </div>
-                        <div className="hidden md:block h-72 place-self-center">
+                        <div className="hidden h-full md:block w-72 place-self-center">
                             <img className="object-cover w-full h-full" src={item.productImage} alt={item.title} />
                         </div>
                     </div>

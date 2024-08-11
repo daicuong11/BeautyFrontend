@@ -12,14 +12,14 @@ const Item = ({ item, className }) => {
 
     return (
         <Link className={`${className} transition-all duration-500 ease-in-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-            } cursor-pointer w-[calc(50%-8px)] sm:w-[calc(33%-12px)] lg:w-[calc(25%-24px)] bg-white dark:bg-[--primary-dark-color] rounded-md shadow-md shadow-black/25 h-72 md:h-80 flex flex-col hover:duration-300 hover:-translate-y-2 hover:ring-2 hover:ring-[--primary-color] dark:hover:ring-[--btn-primary-bg-dark-to]`}>
-            <div className="w-full h-3/5 rounded-tl-md rounded-tr-md">
-                <img className="object-cover w-full h-full rounded-tl-md rounded-tr-md" src={item.image} alt={item.name} />
+            } cursor-pointer w-[calc(50%-8px)] sm:w-[calc(33%-12px)] lg:w-[calc(25%-24px)] bg-white dark:bg-[--primary-dark-color] rounded-md lg:rounded-xl shadow-md shadow-black/25 h-72 md:h-80 flex flex-col hover:duration-300 hover:-translate-y-2 hover:ring-2 hover:ring-[--primary-color] dark:hover:ring-[--btn-primary-bg-dark-to]`}>
+            <div className="w-full h-3/5 rounded-tl-md rounded-tr-md lg:rounded-tl-xl lg:rounded-tr-xl">
+                <img className="object-cover w-full h-full rounded-tl-md rounded-tr-md lg:rounded-tl-xl lg:rounded-tr-xl" src={item.image} alt={item.name} />
             </div>
             <div className="flex flex-col flex-1 p-2 md:p-4">
                 <div className="text-sm font-semibold line-clamp-2 md:text-base">
                     {item.isLove && (
-                        <span className="mr-1 text-[10px] rounded-sm bg-[--primary-color] text-white md:text-[12px] px-1">Yêu thích</span>
+                        <span className="mr-1 text-[10px] rounded-sm lg:rounded-xl bg-[--primary-color] text-white md:text-[12px] px-1">Yêu thích</span>
                     )}
                     {item.name}
                 </div>
