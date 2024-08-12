@@ -17,9 +17,9 @@ const members = {
     avatar: avatar_img,
     certificationImages: [skill_design_hairs_img, skill_design_hairs_img],
     contactInfo: {
-        phone: '0333333333.',
-        email: "thulieubeauty27@gmail.com",
-        address: 'Bình Thuận.',
+        phone: '0366 288 457',
+        email: "thulieu@thammy.com",
+        address: 'Số 226, Đt 766, Trà Tân, Đức Linh, Bình Thuận',
         socialMedia: {
             facebook: '',
             instagram: '',

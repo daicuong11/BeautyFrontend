@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import Header from './Header';
-// import Footer from './Footer';
+import Footer from './Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { useGlobalContext } from '../../context';
@@ -37,7 +37,7 @@ const HomeLayout = ({ children }) => {
         <>
             <Header />
             <div>{children}</div>
-            {/* <Footer /> */}
+            <Footer />
             <div
                 ref={btnGoToTopRef}
                 onClick={handleGoToTop}

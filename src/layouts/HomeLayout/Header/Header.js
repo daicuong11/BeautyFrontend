@@ -2,7 +2,7 @@ import { actions, useGlobalContext } from "../../../context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Expand } from "@theme-toggles/react"
 import "@theme-toggles/react/css/Expand.css"
-import { faBars, faClock } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCartShopping, faClock } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../components/Button/Button";
 import { Link } from "react-scroll";
 import Drawer from "../../../components/Drawer/Drawer";
@@ -27,7 +27,7 @@ const Header = (props) => {
     return (
         <header id="home" className="w-full">
             <div className="gap-4 transition-all h-[68px] bg-[--primary-bg-color] dark:bg-[--primary-bg-dark-color-1] fixed top-0 left-0 right-0 z-20 flex flex-row items-center justify-between text-white dark:text-[--text-dark-color] px-4 sm:px-8 md:px-12 2xl:px-44 text-base">
-                <LinkTo to={'/'} className="flex flex-row items-center justify-center gap-3 px-3 py-1">
+                <LinkTo to={'/'} className="flex flex-row items-center justify-center gap-3 py-1 pr-3 font-semibold">
                     <img className="object-cover w-[38px] h-[38px] bg-white rounded-md dark:bg-black" src={logo_img} alt="" />
                     <div className="uppercase cursor-pointer z-10 text-xl font-mono bg-gradient-to-r from-[#fcd0db] to-[#fed8cd] dark:from-[--btn-primary-bg-from] dark:to-[--btn-primary-bg-to] text-transparent bg-clip-text flex flex-col items-center">
                         <div className="font-serif leading-snug tracking-wider">thu liễu</div>
@@ -36,7 +36,7 @@ const Header = (props) => {
                 </LinkTo>
 
                 <div className="flex flex-row items-center justify-end">
-                    <div className="hidden lg:flex flex-row gap-6 dark:text-[--btn-primary-bg-to] font-semibold text-base justify-center items-center">
+                    <div className="hidden min-[1050px]:flex flex-row gap-6 dark:text-[--btn-primary-bg-to] font-semibold text-base justify-center items-center">
                         <Link to="services"
                             spy={true}
                             smooth={true}
@@ -87,16 +87,19 @@ const Header = (props) => {
                         </Link>
 
                     </div>
-                    <div className="w-[1px] bg-white/60 h-[24px] mx-4 lg:block hidden"></div>
-                    <div className="flex flex-row items-center justify-center gap-5">
-                        <Expand className="text-2xl text-[--primary-bg-dark-color-1] dark:text-white" toggled={theme !== 'light'} toggle={handleChangeTheme} />
-                        <div className="hidden md:block">
+                    <div className="w-[1px] bg-white/60 h-[24px] mx-4 min-[1050px]:block hidden"></div>
+                    <div className="flex flex-row items-center justify-center gap-1">
+                        <Expand className="text-2xl px-2 py-2 text-[--primary-bg-dark-color-1] dark:text-white" toggled={theme !== 'light'} toggle={handleChangeTheme} />
+                        <div className="px-2 py-1 mr-2 text-xl cursor-pointer">
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </div>
+                        <div className="hidden min-[1050px]:block">
                             <Button
                                 primary
                                 rightIcon={<FontAwesomeIcon icon={faClock} />}
-                            >Hẹn lịch</Button>
+                            >Đặt lịch</Button>
                         </div>
-                        <div onClick={() => setIsOpenDrawer(!isOpenDrawer)} className="px-3 py-3 text-xl hover:cursor-pointer lg:hidden">
+                        <div onClick={() => setIsOpenDrawer(!isOpenDrawer)} className="px-3 py-3 text-xl hover:cursor-pointer min-[1050px]:hidden">
                             <FontAwesomeIcon icon={faBars} />
                         </div>
                         <Drawer isOpen={isOpenDrawer} onClose={handleCloseDrawer} />

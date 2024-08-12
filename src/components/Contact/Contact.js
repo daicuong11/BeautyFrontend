@@ -116,13 +116,13 @@ const Contact = () => {
                             <span className="w-6">
                                 <FontAwesomeIcon icon={faHouse} />
                             </span>
-                            <div className="">Số 1, ngõ 41, Trần Duy Hưng, Cầu Giấy, Bình Thuận</div>
+                            <div className="">Số 226, Đt 766, Trà Tân, Đức Linh, Bình Thuận</div>
                         </div>
                         <div className="flex items-center gap-1">
                             <span className="w-6">
                                 <FontAwesomeIcon icon={faPhoneFlip} />
                             </span>
-                            <div className="underline">032 888 457</div>
+                            <div className="underline">036 6288 457</div>
                         </div>
                         <div className="flex items-center gap-1">
                             <span className="w-6">
@@ -203,7 +203,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="">
-                    <div className="h-[500px]">
+                    <div className="h-[420px] sm:h-[500px] lg:h-[420px] min-[1150px]:h-[500px]">
                         <Map />
                     </div>
                 </div>

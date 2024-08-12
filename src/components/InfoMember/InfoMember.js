@@ -24,7 +24,7 @@ const InfoMember = ({ member }) => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 text-base">
                 <h1 className="mb-2 text-3xl font-dancing-bold">
                     {members.fullName}
                 </h1>
@@ -55,7 +55,7 @@ const InfoMember = ({ member }) => {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 mt-2">
                     <div className="flex flex-row items-center gap-4">
                         <span className="w-4">
                             <FontAwesomeIcon icon={faLocationDot} />

@@ -86,7 +86,7 @@ const Drawer = ({ isOpen = false, onClose }) => {
                             primary
                             className={'w-full py-3 text-lg'}
                             rightIcon={<FontAwesomeIcon icon={faClock} />}
-                        >Hẹn lịch</Button>
+                        >Đặt lịch</Button>
                     </div>
                 </div>
             </div>

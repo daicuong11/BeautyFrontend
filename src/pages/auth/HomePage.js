@@ -118,9 +118,9 @@ const HomePage = () => {
                 <div className="flex flex-col mt-12">
                     <div className="text-2xl font-bold">Các khóa đào tạo</div>
                     <div className="my-4 text-lg">
-                        <span className="dark:text-[--primary-color] text-white">Thu Liễu Beauty Academy</span> cung cấp các khóa đào tạo chuyên sâu trong lĩnh vực làm đẹp, từ kỹ thuật chăm sóc da và làm móng đến đào tạo chuyên gia spa, giúp bạn phát triển kỹ năng và sự nghiệp trong ngành làm đẹp.
+                        Thu Liễu Beauty Academy cung cấp các khóa đào tạo chuyên sâu trong lĩnh vực làm đẹp, từ kỹ thuật chăm sóc da và làm móng đến đào tạo chuyên gia spa, giúp bạn phát triển kỹ năng và sự nghiệp trong ngành làm đẹp.
                     </div>
-                    <div className="grid w-full grid-cols-2 gap-5 mt-6 min-[850px]:grid-cols-3 min-[1100px]:grid-cols-4">
+                    <div className="grid w-full grid-cols-2 gap-4 sm:gap-5 mt-6 min-[850px]:grid-cols-3 min-[1100px]:grid-cols-4">
                         {
                             [1, 2, 3, 4, 5, 6].map((course, indexCourse) => (
                                 <div key={indexCourse} className="h-[296px]">
