@@ -23,6 +23,8 @@ const HomePage = () => {
 
     return (
         <div className="min-h-screen">
+            {/* Quảng cáo */}
+            <div className=""></div>
             <div className="w-full h-[50vh] md:h-[580px] xl:h-[680px] mx-auto mt-[68px]">
                 <ImageSlider slides={slides} autoPlay />
             </div>

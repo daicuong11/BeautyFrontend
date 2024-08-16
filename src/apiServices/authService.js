@@ -1,15 +1,13 @@
 import request from "../utils/request";
 
-export const search = async (q) => {
+export const getToken = async (username, password) => {
     try {
-        const res = await request.get('users/search', {
-            params: {
-                q,
-            }
-        })
+        const res = await request.post('auth/login', {
+            username,
+            password,
+        });
         return res.data;
-    }
-    catch (error) {
-        console.log(error);
+    } catch (error) {
+        return error;
     }
 }

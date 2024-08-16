@@ -1,7 +1,8 @@
-import { SET_THEME } from "./constants";
+import { SET_CURRENT_USER, SET_THEME } from "./constants";
 
 const initState = {
     theme: handleInitTheme(),
+    currentUser: {},
 }
 
 function reducer(state, action) {
@@ -10,6 +11,11 @@ function reducer(state, action) {
             return {
                 ...state,
                 theme: handleChangeTheme(action.payload),
+            }
+        case SET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: action.payload,
             }
         default:
             throw new Error('Invalid action.');

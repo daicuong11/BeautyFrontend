@@ -1,7 +1,5 @@
 import {
-    cosmetic_discount_1_img,
     cosmetic_discount_2_img,
-    cosmetic_discount_3_img,
 } from "../assets/images";
 
 const discounts = [
