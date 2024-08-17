@@ -8,6 +8,6 @@ export const getToken = async (username, password) => {
         });
         return res.data;
     } catch (error) {
-        return error;
+        console.log('error', error)
     }
 }

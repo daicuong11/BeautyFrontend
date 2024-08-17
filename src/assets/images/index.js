@@ -10,6 +10,7 @@ export { default as avatar_img } from './avatar.jpg';
 export { default as skill_design_hairs_img } from './skill_design_hairs.jpg';
 export { default as logo_img } from './logo_transparent.png';
 export { default as logo_xl_img } from './logo.jpg';
+export { default as logo_admin_img } from './logo_admin.png';
 
 export { default as nail_1_img } from './images_nail/nail1.jpg';
 export { default as nail_2_img } from './images_nail/nail2.jpg';

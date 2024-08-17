@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../../context";
 
-const ServiceManagementPage = () => {
+const OrdersManagementPage = () => {
     const [state,] = useGlobalContext();
     const { currentUser } = state;
     return (
@@ -11,4 +11,4 @@ const ServiceManagementPage = () => {
     )
 }
 
-export default ServiceManagementPage;
+export default OrdersManagementPage;

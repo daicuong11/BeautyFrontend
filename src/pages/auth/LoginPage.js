@@ -21,11 +21,11 @@ const LoginPage = () => {
         return '';
     };
 
-    const handleLogin = (token, user) => {
-        localStorage.setItem('token', token);
-        dispatch(actions.setCurrentUser(user));
+    const handleLogin = (data) => {
+        localStorage.setItem('token', JSON.stringify(data));
+        dispatch(actions.setCurrentUser(data.user));
         navigate('/admin/service-management');
-        toast.success('Chào mừng ' + user.fullName);
+        toast.success('Chào mừng ' + data.user.fullName);
     }
 
     const handleSubmit = async () => {
@@ -35,11 +35,18 @@ const LoginPage = () => {
         if (checkFullName && checkMail) {
             setIsLoadingSend(true);
             const res = await getToken(username, password);
-            if (res.statusCode > 300 && !res.data.token && !res.data.user) {
+            if (!res) {
+                toast.error('Lỗi server');
+                setIsLoadingSend(false);
+                return;
+            }
+            if (res.statusCode > 300) {
                 toast.error(res.message);
+                setIsLoadingSend(false);
+                return;
             }
             else {
-                handleLogin(res.data.token, res.data.user);
+                handleLogin(res.data);
             }
             setIsLoadingSend(false);
             setUsername('');
@@ -61,6 +68,7 @@ const LoginPage = () => {
                 <div className="flex flex-col gap-1">
                     <div className="font-semibold">Tên tài khoản</div>
                     <InputField
+                        type='text'
                         isSubmit={isSubmit}
                         hasValue={!!username}
                         value={username}
@@ -72,6 +80,7 @@ const LoginPage = () => {
                 <div className="flex flex-col gap-1">
                     <div className="font-semibold">Mật khẩu</div>
                     <InputField
+                        type='password'
                         isSubmit={isSubmit}
                         hasValue={!!password}
                         value={password}

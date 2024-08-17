@@ -9,8 +9,8 @@ request.interceptors.request.use(function (config) {
     const token = localStorage.getItem('token');
 
     // Nếu token tồn tại, thêm nó vào header của request
-    if (token) {
-        config.headers['Authorization'] = `Bearer ${token}`;
+    if (token && token.token) {
+        config.headers['Authorization'] = `Bearer ${token.token}`;
     }
 
     return config;
@@ -19,15 +19,26 @@ request.interceptors.request.use(function (config) {
     return Promise.reject(error);
 });
 
-// Add a response interceptor
-request.interceptors.response.use(function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    return response;
-}, function (error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
-    return Promise.reject(error.response.data);
-});
+request.interceptors.response.use(
+    (response) => {
+        return response;
+    },
+    (error) => {
+        if (error.response) {
+            // Xử lý các mã lỗi từ server (4xx, 5xx)
+            if (error.response.status === 401) {
+                // Ví dụ: Điều hướng về trang đăng nhập khi lỗi 401 Unauthorized
+                window.location.href = '/login';
+            }
+        } else if (error.request) {
+            // Xử lý khi không nhận được phản hồi từ server
+            console.error('No response received from server:', error.request);
+        } else {
+            // Xử lý lỗi khác liên quan đến việc thiết lập yêu cầu
+            console.error('Error setting up request:', error.message);
+        }
+        return Promise.reject(error);
+    }
+);
 
 export default request;
