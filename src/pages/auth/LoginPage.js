@@ -24,7 +24,7 @@ const LoginPage = () => {
     const handleLogin = (data) => {
         localStorage.setItem('token', JSON.stringify(data));
         dispatch(actions.setCurrentUser(data.user));
-        navigate('/admin/service-management');
+        navigate('/admin/dashboard');
         toast.success('Chào mừng ' + data.user.fullName);
     }
 

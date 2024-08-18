@@ -1,12 +1,8 @@
-import { useGlobalContext } from "../../context";
 
 const CosmeticsManagementPage = () => {
-    const [state,] = useGlobalContext();
-    const { currentUser } = state;
     return (
-        <div className="w-full h-screen bg-red-100">
+        <div className="w-full h-screen ">
             Admin page
-            <div className="">{currentUser.fullName}</div>
         </div>
     )
 }

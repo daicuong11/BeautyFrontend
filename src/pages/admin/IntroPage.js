@@ -1,4 +1,5 @@
-const SettingsPage = () => {
+
+const IntroPage = () => {
     return (
         <div className="w-full h-screen">
             Admin page
@@ -6,4 +7,4 @@ const SettingsPage = () => {
     )
 }
 
-export default SettingsPage;
+export default IntroPage;

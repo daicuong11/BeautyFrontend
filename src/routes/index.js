@@ -4,7 +4,7 @@ import HomeLayout from "../layouts/HomeLayout";
 //pages
 import HomePage from "../pages/auth/HomePage";
 import LoginPage from "../pages/auth/LoginPage";
-import { CollectionsManagementPage, CosmeticsManagementPage, CoursesManagementPage, DashboardPage, HelpsPage, OrdersManagementPage, ServiceManagementPage, SettingsPage, StatisticsPage } from "../pages/admin/";
+import { CollectionsManagementPage, CosmeticsManagementPage, CoursesManagementPage, DashboardPage, HelpsPage, IntroPage, OrdersManagementPage, ServiceManagementPage, SettingsPage } from "../pages/admin/";
 
 const publicRoutes = [
     { path: '/', component: HomePage, layout: HomeLayout },
@@ -13,7 +13,7 @@ const publicRoutes = [
 
 const privateRoutes = [
     { path: '/admin/dashboard', component: DashboardPage },
-    { path: '/admin/statistics', component: StatisticsPage },
+    { path: '/admin/intro', component: IntroPage },
     { path: '/admin/orders', component: OrdersManagementPage },
     { path: '/admin/services', component: ServiceManagementPage },
     { path: '/admin/courses', component: CoursesManagementPage },

@@ -1,6 +1,7 @@
-import { ChevronFirst, ChevronLast, MoreVertical } from 'lucide-react';
+import { ChevronFirst, ChevronLast, LogOut } from 'lucide-react';
 import { avatar_img, logo_admin_img } from '../../../assets/images';
 import { createContext, useContext, useState } from 'react';
+import { Tooltip } from 'react-tooltip';
 
 const SidebarContext = createContext();
 const Sidebar = ({ children }) => {
@@ -31,7 +32,15 @@ const Sidebar = ({ children }) => {
                             <h4 className="font-semibold">Thu Liễu</h4>
                             <span className="text-xs text-gray-600">thulieu@thamy.com</span>
                         </div>
-                        <MoreVertical size={20} />
+                        <div data-tooltip-id="logout-tooltip" className="py-2 pl-3 text-gray-500 cursor-pointer hover:text-black">
+                            <LogOut size={20} />
+                            <Tooltip
+                                id="logout-tooltip"
+                                place="top"
+                                content="Đăng xuất"
+                                className='z-10'
+                            />
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -63,7 +72,7 @@ export const SidebarItem = ({ icon, text, active = false, alert = false, onClick
             {!expanded && <div className={`
                 absolute left-full rounded-md px-2 py-1 ml-6 whitespace-nowrap
                 bg-indigo-100 text-indigo-800 text-sm
-                invisible opacity-20 -translate-x-3 transition-all
+                invisible opacity-20 -translate-x-3 transition-all z-10
                 group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
                 `}>{text}</div>}
         </li>

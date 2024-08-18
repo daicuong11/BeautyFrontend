@@ -1,5 +1,5 @@
 export { default as DashboardPage } from './DashboardPage';
-export { default as StatisticsPage } from './StatisticsPage';
+export { default as IntroPage } from './IntroPage';
 export { default as OrdersManagementPage } from './OrdersManagementPage';
 export { default as ServiceManagementPage } from './ServiceManagementPage';
 export { default as CollectionsManagementPage } from './CollectionsManagementPage';

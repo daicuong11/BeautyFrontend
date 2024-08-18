@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 px-4 py-1.5 cursor-pointer font-semibold rounded-lg shadow-md;
+  }
+
+  .btn.btn-light {
+    @apply text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-600;
+  }
+
+  .btn.btn-danger {
+    @apply text-white bg-red-600 shadow-red-400/40 hover:bg-red-700;
+  }
+}
+
 :root {
   --primary-color: #DD7A83;
   --primary-dark-color: #031544;

@@ -1,4 +1,4 @@
-import { Book, BookImage, ChartArea, Diamond, Droplet, HelpCircle, LayoutDashboard, Settings, ShoppingCart } from "lucide-react";
+import { Book, BookImage, Diamond, Droplet, HelpCircle, LayoutDashboard, Settings, ShoppingCart, Zap } from "lucide-react";
 
 const sidebarItems = [
     {
@@ -10,10 +10,10 @@ const sidebarItems = [
     },
     {
         id: 1,
-        icon: <ChartArea />,
-        text: 'Thống kê',
+        icon: <Zap />,
+        text: 'Tin nóng',
         isAlert: false,
-        href: '/admin/statistics',
+        href: '/admin/intro',
     },
     {
         id: 2,

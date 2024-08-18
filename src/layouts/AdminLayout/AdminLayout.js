@@ -1,19 +1,18 @@
 import Sidebar, { SidebarItem } from './Sidebar/Sidebar';
 import sidebarItems from '../../Static_Data/sidebar_items';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Header from './Header/Header';
 
 const AdminLayout = ({ children }) => {
-    const [currentSidebarItemActive, setCurrentSidebarItemActive] = useState(0);
+    const location = useLocation();
     const navigate = useNavigate();
 
     const handleClickSidebarItem = (index) => {
         navigate(sidebarItems[index].href);
-        setCurrentSidebarItemActive(index);
     }
 
     return (
-        <main className="flex">
+        <main className="flex max-h-screen overflow-hidden">
             <Sidebar >
                 {sidebarItems.map((item, index) => {
                     if (index === sidebarItems.length - 2) {
@@ -25,7 +24,7 @@ const AdminLayout = ({ children }) => {
                                     icon={item.icon}
                                     text={item.text}
                                     alert={item.isAlert}
-                                    active={currentSidebarItemActive === index}
+                                    active={item.href === location.pathname}
                                 />
                             </span>
                         );
@@ -37,12 +36,17 @@ const AdminLayout = ({ children }) => {
                             icon={item.icon}
                             text={item.text}
                             alert={item.isAlert}
-                            active={currentSidebarItemActive === index}
+                            active={item.href === location.pathname}
                         />
                     )
                 })}
             </Sidebar>
-            <div className="flex-1 transition-all">{children}</div>
+            <div className="relative flex-1 transition-all">
+                <Header />
+                <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] p-4 bg-gray-100">
+                    {children}
+                </div>
+            </div>
         </main>
     );
 };
