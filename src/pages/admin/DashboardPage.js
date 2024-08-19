@@ -1,5 +1,5 @@
-import BarChart from "../../components/Graphs/BarChart";
-import LineGraph from "../../components/Graphs/LineGraph";
+// import BarChart from "../../components/Graphs/BarChart";
+// import LineGraph from "../../components/Graphs/LineGraph";
 
 const DashboardPage = () => {
     return (
