@@ -10,22 +10,33 @@ import ImageView from '../ImageView/ImageView';
 
 const SwiperCube = ({ data, delayAuto = 2500 }) => {
     const [isOpenImageView, setIsOpenImageView] = useState(false);
-    const [currentImage, setCurrentImage] = useState('');
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const swiperRef = useRef(null);
 
-    const handleOpenImageView = (image) => {
+    const handleOpenImageView = (index) => {
         if (swiperRef.current) {
             swiperRef.current.swiper.autoplay.stop();
         }
-        setCurrentImage(image);
+        setCurrentImageIndex(index);
         setIsOpenImageView(true);
     };
 
     const handleCloseImageView = () => {
         setIsOpenImageView(false);
-        setCurrentImage('');
         if (swiperRef.current) {
             swiperRef.current.swiper.autoplay.start();
+        }
+    };
+
+    const goToNextSlide = () => {
+        if (swiperRef.current) {
+            swiperRef.current.swiper.slideNext();
+        }
+    };
+
+    const goToPreviousSlide = () => {
+        if (swiperRef.current) {
+            swiperRef.current.swiper.slidePrev();
         }
     };
 
@@ -39,11 +50,12 @@ const SwiperCube = ({ data, delayAuto = 2500 }) => {
                 modules={[EffectCube, Pagination, Autoplay]}
                 className="w-full h-full"
                 ref={swiperRef}
+                onSlideChange={(swiper) => setCurrentImageIndex(swiper.realIndex)}
             >
                 {data.map((image, index) =>
                     <SwiperSlide key={index} className="w-full h-full">
                         <img
-                            onClick={() => handleOpenImageView(image.url)}
+                            onClick={() => handleOpenImageView(index)}
                             className="block object-cover w-full h-full"
                             src={image.url}
                             alt={`Slide ${index}`}
@@ -52,9 +64,11 @@ const SwiperCube = ({ data, delayAuto = 2500 }) => {
                 )}
             </Swiper>
             <ImageView
-                imageUrl={currentImage}
+                imageUrl={data[currentImageIndex].url}
                 isOpen={isOpenImageView}
                 onClose={handleCloseImageView}
+                goToNext={goToNextSlide}
+                goToPrevious={goToPreviousSlide}
             />
         </>
     );
