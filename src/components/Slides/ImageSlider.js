@@ -64,7 +64,7 @@ const ImageSlider = ({ slides, autoPlay = false, isShowButtonLeftRight = true, t
                         <div className={`delay-500 transition-all duration-500 ease-in-out font-mono text-xl md:text-2xl lg:text-4xl font-bold text-white ${index === currentIndex ? '-translate-y-8 opacity-100' : 'opacity-0'}`}>
                             {slide.title}
                         </div>
-                        <div className={`delay-[1000ms] hidden md:block transition-all duration-500 ease-in-out text-gray-600 text-sm font-semibold ${index === currentIndex ? '-translate-y-8 opacity-100' : 'opacity-0'}`}>
+                        <div className={`delay-[1000ms] hidden md:block transition-all duration-500 ease-in-out text-gray-200 text-sm font-semibold ${index === currentIndex ? '-translate-y-8 opacity-100' : 'opacity-0'}`}>
                             {slide.description}
                         </div>
                         <div className={`delay-[1500ms] transition-all duration-500 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>

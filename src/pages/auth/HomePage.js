@@ -3,7 +3,8 @@ import FlipCard from "../../components/flip_card/FlipCard";
 import { services, slides, collection } from "../../Static_Data/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { faHandPointLeft } from "@fortawesome/free-regular-svg-icons";
+import { useEffect, useState } from "react";
 import InfoMember from "../../components/InfoMember/InfoMember";
 import SwiperCube from "../../components/Swiper/SwiperCube";
 import SwiperCoverflow from "../../components/Swiper/SwiperCoverflow";
@@ -12,19 +13,96 @@ import Booth from "../../components/Booth/Booth";
 import Course from "../../components/Course/Course";
 import { logo_xl_img } from "../../assets/images";
 import Contact from "../../components/Contact/Contact";
+import Modal from '../../components/Modal/Modal';
+import { Bell, Book, Diamond, Droplet } from "lucide-react";
+import { Link } from "react-scroll";
 
 const HomePage = () => {
 
     const [isFlip, setIsFlip] = useState(false);
+    const [isShowAdvertising, setIsShowAdvertising] = useState(false);
 
     const handleFlip = () => {
         setIsFlip(!isFlip);
     }
 
+    useEffect(() => {
+        const stoId = setTimeout(() => {
+            setIsShowAdvertising(true);
+        }, 2000);
+        return () => {
+            clearTimeout(stoId);
+        };
+    }, []);
+
     return (
         <div className="min-h-screen">
             {/* Quảng cáo */}
-            <div className=""></div>
+            <Modal className="w-11/12 overflow-y-auto shadow-md md:w-4/6 lg:w-3/6 max-h-[calc(100%-300px)] md:max-h-[calc(100%-120px)]" onCover={false} open={isShowAdvertising} onClose={() => setIsShowAdvertising(false)} >
+                <div className="flex flex-col w-full h-full gap-3">
+                    <h1 className="text-lg font-semibold text-[--primary-color-2] flex items-center gap-2"> <Bell className="animate-[wiggle_1s_ease-in-out_infinite]" /> Thông báo</h1>
+                    <div className="">
+                        Thu Liễu Beauty Academy đang giảm giá cực sốc!!!
+                    </div>
+                    <img className="object-cover rounded-xl" src={logo_xl_img} alt="" />
+                    <div className="flex flex-col items-center justify-center gap-1">
+                        <div className="flex items-center gap-2">
+                            <Diamond />
+                            Xem các dịch vụ:
+                            <Link onClick={() => setIsShowAdvertising(false)} to="services"
+                                spy={true}
+                                smooth={true}
+                                offset={-68}
+                                duration={500} className="flex items-center gap-1 hover:cursor-pointer text-[--primary-color] hover:underline py-[2px]">
+                                Nhấn vào đây <FontAwesomeIcon icon={faHandPointLeft} className="text-lg animate-[toLeftRight_1s_ease-in-out_infinite]" />
+                            </Link>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Droplet />
+                            Xem các mỹ phẩm:
+                            <Link onClick={() => setIsShowAdvertising(false)} to="cosmetics"
+                                spy={true}
+                                smooth={true}
+                                offset={-68}
+                                duration={500} className="flex items-center gap-1 hover:cursor-pointer text-[--primary-color] hover:underline py-[2px]">
+                                Nhấn vào đây <FontAwesomeIcon icon={faHandPointLeft} className="text-lg animate-[toLeftRight_1s_ease-in-out_infinite]" />
+                            </Link>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Book />
+                            Xem các khóa đào tạo:
+                            <Link onClick={() => setIsShowAdvertising(false)} to="courses"
+                                spy={true}
+                                smooth={true}
+                                offset={-68}
+                                duration={500} className="flex items-center gap-1 hover:cursor-pointer text-[--primary-color] hover:underline py-[2px]">
+                                Nhấn vào đây <FontAwesomeIcon icon={faHandPointLeft} className="text-lg animate-[toLeftRight_1s_ease-in-out_infinite]" />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div className="my-1 text-lg font-semibold">Chi tiết</div>
+                        <h1 className="font-medium">Mừng Xuân Rực Rỡ - Giảm Giá Sốc Tại Thu Liễu Beauty Academy!</h1>
+                        <p className="">
+                            Chào đón dịp lễ Tết sắp tới, Thu Liễu Beauty Academy xin gửi tới Quý Khách Hàng chương trình ưu đãi đặc biệt chưa từng có với hàng loạt dịch vụ làm đẹp, mỹ phẩm cao cấp và các khóa đào tạo chuyên nghiệp:
+                        </p>
+                        <div className="pl-4 list-disc">
+                            <li className="">
+                                Giảm đến 50% cho tất cả các dịch vụ làm đẹp: từ chăm sóc da, phun xăm thẩm mỹ đến liệu trình trẻ hóa, giúp bạn tự tin rạng ngời đón năm mới.
+                            </li>
+                            <li className="">
+                                Mỹ phẩm chính hãng giảm giá tới 40%, cam kết mang lại làn da khỏe mạnh, trắng sáng tự nhiên với các dòng sản phẩm uy tín từ các thương hiệu hàng đầu.
+                            </li>
+                            <li className="">
+                                Đặc biệt, đăng ký ngay các khóa đào tạo làm đẹp, phun xăm tại Thu Liễu Beauty Academy để nhận ưu đãi học phí lên đến 30% và cơ hội thực hành trực tiếp với các chuyên gia hàng đầu trong ngành.
+                            </li>
+                        </div>
+                        <p className="">
+                            Nhanh tay nắm bắt cơ hội để làm mới bản thân và nâng cao tay nghề cùng Thu Liễu Beauty Academy trong mùa lễ hội này! Chương trình khuyến mãi có giới hạn, hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn và đặt lịch hẹn.
+                        </p>
+                    </div>
+                </div>
+            </Modal>
             <div className="w-full h-[50vh] md:h-[580px] xl:h-[680px] mx-auto mt-[68px]">
                 <ImageSlider slides={slides} autoPlay />
             </div>

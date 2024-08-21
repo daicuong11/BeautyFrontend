@@ -1,15 +1,16 @@
 import { Trash2, X } from "lucide-react";
 
-const Modal = ({ open, onClose, children }) => {
+const Modal = ({ open, onClose, children, onCover = true, className = '' }) => {
 
     return (
-        <div onClick={onClose} className={`
-            fixed inset-0 flex justify-center items-center transition-colors
+        <div onClick={() => onCover && onClose()} className={`
+            fixed z-30 inset-0 flex justify-center items-center transition-colors
             ${open ? "visible bg-black/20 " : 'invisible'}
         `}>
             <div onClick={(e) => e.stopPropagation()} className={`
-                bg-white rounded-xl shadow p-6 transition-all
+                bg-white p-6 rounded-xl shadow transition-all relative
                 ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}
+                ${className}
                 `}>
                 <button onClick={onClose} className="absolute p-1 text-gray-400 bg-white rounded-lg top-2 right-2 hover:bg-gray-50 hover:text-gray-600">
                     <X />
