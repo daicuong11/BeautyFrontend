@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import { GlobalProvider } from './context';
 import 'react-tooltip/dist/react-tooltip.css'
+import 'react-markdown-editor-lite/lib/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

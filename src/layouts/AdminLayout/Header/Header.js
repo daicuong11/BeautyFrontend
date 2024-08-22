@@ -22,9 +22,11 @@ const Header = () => {
     const [openNotificationModal, setOpenNotificationModal] = useState(false);
 
     return (
-        <div className="w-full absolute top-0 left-0 right-0 shadow-md bg-white h-[68px] transition-all px-4 grid grid-cols-3 gap-4 items-center">
+        <div className="w-full absolute top-0 left-0 right-0 shadow-md bg-white h-[68px] transition-all px-4 grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
             <div className="text-lg font-semibold">{titleHeader[location.pathname]}</div>
-            <Search />
+            <div className="hidden w-full sm:block">
+                <Search />
+            </div>
             <div className="flex items-center justify-end gap-2">
                 <div onClick={() => setOpenNotificationModal(!openNotificationModal)} data-tooltip-id="notifications-tooltip" className="relative px-3 py-2 text-gray-500 cursor-pointer hover:text-black">
                     <Bell size={20} />

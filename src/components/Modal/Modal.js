@@ -4,8 +4,8 @@ const Modal = ({ open, onClose, children, onCover = true, className = '' }) => {
 
     return (
         <div onClick={() => onCover && onClose()} className={`
-            fixed z-30 inset-0 flex justify-center items-center transition-colors
-            ${open ? "visible bg-black/20 " : 'invisible'}
+            fixed inset-0 flex justify-center items-center transition-colors 
+            ${open ? "visible bg-black/20 z-30" : 'invisible z-[-1]'}
         `}>
             <div onClick={(e) => e.stopPropagation()} className={`
                 bg-white p-6 rounded-xl shadow transition-all relative

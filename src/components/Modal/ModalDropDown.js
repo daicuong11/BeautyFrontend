@@ -36,7 +36,7 @@ const ModalDropDown = ({ open, onClose, isShowCloseBtn = false, location = 'bott
     return (
         <div onClick={(e) => e.stopPropagation()} ref={modalRef} className={` absolute
                 bg-white rounded-xl shadow-[0_-2px_16px_2px_rgba(0,0,0,0.2)] p-1 transition-all overflow-hidden
-                ${open ? 'scale-100 opacity-100 translate-y-0 block' : 'scale-90 opacity-0 -translate-y-5 hidden'}
+                ${open ? 'scale-100 opacity-100 translate-y-0 block z-20' : 'scale-90 opacity-0 -translate-y-5 hidden z-0'}
                 ${css}
                 `}>
             {isShowCloseBtn && (

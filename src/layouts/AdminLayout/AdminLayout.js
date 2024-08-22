@@ -13,34 +13,36 @@ const AdminLayout = ({ children }) => {
 
     return (
         <main className="flex max-h-screen overflow-hidden">
-            <Sidebar >
-                {sidebarItems.map((item, index) => {
-                    if (index === sidebarItems.length - 2) {
+            <div className="hidden sm:block">
+                <Sidebar >
+                    {sidebarItems.map((item, index) => {
+                        if (index === sidebarItems.length - 2) {
+                            return (
+                                <span key={index}>
+                                    <hr className='my-3' />
+                                    <SidebarItem
+                                        onClick={() => handleClickSidebarItem(index)}
+                                        icon={item.icon}
+                                        text={item.text}
+                                        alert={item.isAlert}
+                                        active={item.href === location.pathname}
+                                    />
+                                </span>
+                            );
+                        }
                         return (
-                            <span key={index}>
-                                <hr className='my-3' />
-                                <SidebarItem
-                                    onClick={() => handleClickSidebarItem(index)}
-                                    icon={item.icon}
-                                    text={item.text}
-                                    alert={item.isAlert}
-                                    active={item.href === location.pathname}
-                                />
-                            </span>
-                        );
-                    }
-                    return (
-                        <SidebarItem
-                            key={index}
-                            onClick={() => handleClickSidebarItem(index)}
-                            icon={item.icon}
-                            text={item.text}
-                            alert={item.isAlert}
-                            active={item.href === location.pathname}
-                        />
-                    )
-                })}
-            </Sidebar>
+                            <SidebarItem
+                                key={index}
+                                onClick={() => handleClickSidebarItem(index)}
+                                icon={item.icon}
+                                text={item.text}
+                                alert={item.isAlert}
+                                active={item.href === location.pathname}
+                            />
+                        )
+                    })}
+                </Sidebar>
+            </div>
             <div className="relative flex-1 transition-all">
                 <Header />
                 <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] p-4 bg-gray-200">
