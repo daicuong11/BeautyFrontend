@@ -1,13 +1,13 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import MarkdownEditor from "../../components/MdEditer/Editer";
+import MarkdownEditor from "../../../components/MdEditer/Editer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import Advertisement from "../../components/Advertisement/Advertisement";
-import DropdownButtonAChoice from "../../components/DropdownButton/DropdownButtonAChoice";
-import introPatternsData from '../../Static_Data/intro_patterns_data';
+import Advertisement from "../../../components/Advertisement/Advertisement";
+import DropdownButtonAChoice from "../../../components/DropdownButton/DropdownButtonAChoice";
+import introPatternsData from '../../../Static_Data/intro_patterns_data';
 
 
-const IntroPage = () => {
+const CreateIntro = () => {
     const [isShowAdvertising, setIsShowAdvertising] = useState(false);
     const [textContent, setTextContent] = useState('');
     const [selectedIntro, setSelectedIntro] = useState();
@@ -28,7 +28,7 @@ const IntroPage = () => {
                     </button>
                     <Advertisement content={textContent} onCover showRedirect={false} autoShow={false} isShowAdvertising={isShowAdvertising} setIsShowAdvertising={setIsShowAdvertising} />
 
-                    <button className="btn btn-success">Áp dụng ngay</button>
+                    <button className="btn btn-success">Hoàn thành</button>
                 </div>
             </div>
             <div className="min-h-[500px] flex-1">
@@ -37,5 +37,4 @@ const IntroPage = () => {
         </div>
     )
 }
-
-export default IntroPage;
+export default CreateIntro;

@@ -2,7 +2,7 @@ import { SET_CURRENT_USER, SET_THEME } from "./constants";
 
 const initState = {
     theme: handleInitTheme(),
-    currentUser: localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')).user : {},
+    currentUser: localStorage.getItem('token') || '',
 }
 
 function reducer(state, action) {

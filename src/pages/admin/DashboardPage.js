@@ -13,7 +13,7 @@ const DashboardPage = () => {
         };
     }, []);
     return (
-        <div className="w-full p-4">
+        <div className="w-full p-8">
             <div className={`grid grid-cols-4 gap-8 transition-all delay-50 duration-500 ease-in ${isMounted ? 'translate-y-0 opacity-100 visible scale-100 animate-none' : 'translate-y-full invisible opacity-0 scale-90 animate-pulse'}`}>
                 <div className="bg-white w-full shadow-md h-[160px] border-l-4 border-red-500 flex flex-col items-center p-4 hover:scale-105 transition-all ease-in-out">
                     <div className="text-lg font-medium">Tổng Đơn Hàng</div>

@@ -4,10 +4,8 @@ import { toast } from 'react-toastify';
 import Loading from '../../components/Loading/Loading';
 import { getToken } from '../../apiServices/authService';
 import { useNavigate } from 'react-router-dom';
-import { actions, useGlobalContext } from '../../context';
 
 const LoginPage = () => {
-    const [, dispatch] = useGlobalContext();
     const [isLoadingSend, setIsLoadingSend] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -22,10 +20,9 @@ const LoginPage = () => {
     };
 
     const handleLogin = (data) => {
-        localStorage.setItem('token', JSON.stringify(data));
-        dispatch(actions.setCurrentUser(data.user));
+        localStorage.setItem('token', data.token);
         navigate('/admin/dashboard');
-        toast.success('Chào mừng ' + data.user.fullName);
+        toast.success('Đăng nhập thành công');
     }
 
     const handleSubmit = async () => {

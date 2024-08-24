@@ -11,7 +11,7 @@ const sidebarItems = [
     {
         id: 1,
         icon: <Zap />,
-        text: 'Tin nóng',
+        text: 'Bài sales',
         isAlert: false,
         href: '/admin/intro',
     },
@@ -63,7 +63,7 @@ const sidebarItems = [
         text: 'Trợ giúp',
         isAlert: false,
         href: '/admin/helps',
-    }
+    },
 ];
 
 export default sidebarItems;

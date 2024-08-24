@@ -2,10 +2,24 @@ import { ChevronFirst, ChevronLast, LogOut } from 'lucide-react';
 import { avatar_img, logo_admin_img } from '../../../assets/images';
 import { createContext, useContext, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
+import { useGlobalContext } from '../../../context/hooks';
+import { setCurrentUser } from '../../../context/actions';
+import { useNavigate } from 'react-router-dom';
+import Modal from '../../../components/Modal/Modal';
 
 const SidebarContext = createContext();
 const Sidebar = ({ children }) => {
+    const [state, dispatch] = useGlobalContext();
+    const { currentUser } = state;
     const [expanded, setExpanded] = useState(true);
+    const [showConfirmLogout, setShowConfirmLogout] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        dispatch(setCurrentUser({}));
+        navigate('/admin/login');
+    }
 
     return (
         <aside className="h-screen">
@@ -29,17 +43,20 @@ const Sidebar = ({ children }) => {
                         overflow-hidden transition-all ${expanded ? 'ml-3 w-52' : 'w-0'}
                         `}>
                         <div className="leading-4">
-                            <h4 className="font-semibold">Thu Liễu</h4>
-                            <span className="text-xs text-gray-600">thulieu@thamy.com</span>
+                            <h4 className="font-semibold">{currentUser.fullName || 'Thu Liễu'}</h4>
+                            <span className="text-xs text-gray-600">{currentUser.email || 'thulieu@thamy.com'}</span>
                         </div>
-                        <div data-tooltip-id="logout-tooltip" className="py-2 pl-3 text-gray-500 cursor-pointer hover:text-black">
+                        <div onClick={() => setShowConfirmLogout(!showConfirmLogout)} data-tooltip-id="logout-tooltip" className="py-2 pl-3 text-gray-500 cursor-pointer hover:text-black">
                             <LogOut size={20} />
                             <Tooltip
                                 id="logout-tooltip"
                                 place="top"
                                 content="Đăng xuất"
-                                className='z-10'
+                                className='z-10 bg-pink-500'
                             />
+                            <Modal.OkCancel onOk={handleLogout} open={showConfirmLogout} onClose={() => setShowConfirmLogout(false)} title='Xác nhận đăng xuất' subTitle='Bạn có chắc chắc muốn đăng xuất tài khoản hiện tại?' OkText='Xác nhận' icon={<LogOut className='text-indigo-500' size={56} />} >
+
+                            </Modal.OkCancel>
                         </div>
                     </div>
                 </div>

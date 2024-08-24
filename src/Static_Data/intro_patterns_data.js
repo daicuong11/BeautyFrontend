@@ -1,7 +1,7 @@
 const introPatternsData = [
     {
         id: -1,
-        title: 'Bỏ chọn',
+        title: 'Bỏ chọn mẫu',
         text: '',
     },
     {

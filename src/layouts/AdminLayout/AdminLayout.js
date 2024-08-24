@@ -25,7 +25,7 @@ const AdminLayout = ({ children }) => {
                                         icon={item.icon}
                                         text={item.text}
                                         alert={item.isAlert}
-                                        active={item.href === location.pathname}
+                                        active={location.pathname.includes(item.href)}
                                     />
                                 </span>
                             );
@@ -37,7 +37,7 @@ const AdminLayout = ({ children }) => {
                                 icon={item.icon}
                                 text={item.text}
                                 alert={item.isAlert}
-                                active={item.href === location.pathname}
+                                active={location.pathname.includes(item.href)}
                             />
                         )
                     })}
@@ -45,7 +45,7 @@ const AdminLayout = ({ children }) => {
             </div>
             <div className="relative flex-1 transition-all">
                 <Header />
-                <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] p-4 bg-gray-200">
+                <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] bg-gray-50">
                     {children}
                 </div>
             </div>

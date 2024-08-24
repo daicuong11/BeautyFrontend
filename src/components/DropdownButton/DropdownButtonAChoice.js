@@ -60,29 +60,29 @@ const DropdownButtonAChoice = ({
                 ) : placeHolder}
 
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} className="absolute text-xs -translate-y-1/2 top-1/2 right-3" />
-            </button>
-            {isOpen && options.length > 0 && (
-                <div className={`absolute transition-all duration-100 ease-in-out right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${dropdownClassName}`}
-                >
-                    <div className="py-1">
-                        {options.map((option) => (
-                            <button
-                                key={option.id}
-                                onClick={() => handleOptionClick(option)}
-                                className="relative block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-                            >
-                                {option.title}
-                                {option === selected && (
-                                    <span className="absolute right-3">
-                                        <FontAwesomeIcon className='text-base text-green-500' icon={faCheck} />
-                                    </span>
-                                )}
-                            </button>
-                        ))}
+                {isOpen && options.length > 0 && (
+                    <div className={`absolute transition-all duration-100 ease-in-out top-full right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${dropdownClassName}`}
+                    >
+                        <div className="py-1">
+                            {options.map((option) => (
+                                <span
+                                    key={option.id}
+                                    onClick={() => handleOptionClick(option)}
+                                    className="relative block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
+                                >
+                                    {option.title}
+                                    {option === selected && (
+                                        <span className="absolute right-3">
+                                            <FontAwesomeIcon className='text-base text-green-500' icon={faCheck} />
+                                        </span>
+                                    )}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
-            {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+                )}
+                {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+            </button>
         </div>
     );
 };

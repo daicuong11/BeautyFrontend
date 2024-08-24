@@ -48,3 +48,27 @@ Modal.Delete = ({ open, onClose }) => {
         </Modal>
     )
 }
+
+Modal.OkCancel = ({ open, onClose, onOk = onClose, title = 'title', icon, subTitle = 'subTitle', OkText = 'OkText', CancelText = 'Hủy' }) => {
+    return (
+        <Modal open={open} onClose={onClose}>
+            <div className="flex flex-col items-center w-56 text-center">
+                {icon ? icon : <Trash2 size={56} className="text-red-500 " />}
+                <div className="w-48 py-4">
+                    <h3 className="text-lg font-black text-gray-800">{title}</h3>
+                    <p className="text-sm text-gray-500 ">
+                        {subTitle}
+                    </p>
+                </div>
+                <div className="flex w-full gap-3">
+                    <button onClick={onOk} className="w-full btn btn-danger">
+                        {OkText}
+                    </button>
+                    <button onClick={onClose} className="w-full btn btn-light">
+                        {CancelText}
+                    </button>
+                </div>
+            </div>
+        </Modal>
+    )
+}

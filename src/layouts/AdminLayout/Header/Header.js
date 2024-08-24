@@ -4,26 +4,17 @@ import Search from "../Search/MySearch";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import ModalDropDown from "../../../components/Modal/ModalDropDown";
-
-const titleHeader = {
-    '/admin/dashboard': 'Dashboard',
-    '/admin/intro': 'Tin nóng',
-    '/admin/orders': 'Đơn hàng',
-    '/admin/services': 'Dịch vụ',
-    '/admin/courses': 'Đào tạo',
-    '/admin/cosmetics': 'Mỹ phẩm',
-    '/admin/collections': 'Bộ sưu tập',
-    '/admin/settings': 'Cài đặt',
-    '/admin/helps': 'Trợ giúp',
-};
+import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 
 const Header = () => {
-    const location = useLocation();
+    const path = useLocation().pathname;
     const [openNotificationModal, setOpenNotificationModal] = useState(false);
 
     return (
         <div className="w-full absolute top-0 left-0 right-0 shadow-md bg-white h-[68px] transition-all px-4 grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-            <div className="text-lg font-semibold">{titleHeader[location.pathname]}</div>
+            <div className="text-lg font-semibold">
+                <Breadcrumbs path={path} />
+            </div>
             <div className="hidden w-full sm:block">
                 <Search />
             </div>
