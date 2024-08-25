@@ -33,7 +33,7 @@ const IntroPage = () => {
 
 
     return (
-        <div className="flex flex-col w-full h-full gap-4 p-4 bg-gray-50 md:px-10 md:py-4">
+        <div className="flex flex-col w-full h-full gap-4 p-4 md:px-10 md:py-8">
             <div className="flex items-end justify-between">
                 <div className="flex items-center gap-2 text-base">
                     <input type="checkbox" value={choiceAllArticle} onChange={handleChoiceAll} className="w-4 h-4 cursor-pointer" id="cb-choice-all" />
@@ -45,7 +45,7 @@ const IntroPage = () => {
                 </div>
             </div>
             <hr />
-            <div className="flex-1 mt-4">
+            <div className="flex-1 pb-8">
                 <div className="grid grid-cols-3 gap-x-4 gap-y-8">
                     {introPatternsData.map((article, index) => (
                         <ArticleItem key={index} article={article} isChecked={listItemChecked.includes(article)} onClick={() => handleClickItem(article)} />

@@ -1,7 +1,10 @@
+import MarkdownPreview from "../../components/MdEditer/MarkdownPreview";
+import introPatternsData from "../../Static_Data/intro_patterns_data";
+
 const HelpsPage = () => {
     return (
         <div className="w-full h-screen bg-red-100">
-            Admin page
+            <MarkdownPreview text={introPatternsData[2].text} />
         </div>
     )
 }

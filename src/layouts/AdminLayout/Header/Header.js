@@ -11,7 +11,7 @@ const Header = () => {
     const [openNotificationModal, setOpenNotificationModal] = useState(false);
 
     return (
-        <div className="w-full absolute top-0 left-0 right-0 shadow-md bg-white h-[68px] transition-all px-4 grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
+        <div className="w-full z-20 absolute top-0 left-0 right-0 shadow-md bg-white h-[68px] transition-all px-4 grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
             <div className="text-lg font-semibold">
                 <Breadcrumbs path={path} />
             </div>

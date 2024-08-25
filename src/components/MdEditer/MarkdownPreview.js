@@ -15,7 +15,15 @@ export default function MarkdownPreview({ text }) {
         renderHTML={(text) => mdParser.render(text)}
         view={{ md: false, menu: false, html: true }}
         readOnly={true}
-        style={{ borderStyle: 'none', boxShadow: 'none' }}
+        canView={{
+          menu: false,
+          md: false,
+          html: true,
+          both: false,
+          fullScreen: false,
+          hideMenu: false,
+        }}
+        style={{ borderStyle: 'none', boxShadow: 'none', width: '100%', height: '100%' }}
       />
     )
   );

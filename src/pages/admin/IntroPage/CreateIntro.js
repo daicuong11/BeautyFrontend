@@ -18,7 +18,7 @@ const CreateIntro = () => {
     }, [selectedIntro]);
 
     return (
-        <div className="flex flex-col w-full h-full gap-4 md:p-4">
+        <div className="flex flex-col w-full h-full gap-4 p-4 md:py-8 md:px-10">
             <div className="grid items-center w-full grid-cols-1 gap-4 lg:grid-cols-2">
                 <DropdownButtonAChoice selected={selectedIntro} setSelected={setSelectedIntro} options={introPatternsData} placeHolder="Chọn mẫu có sẳn" buttonClassName="min-[420px]:!w-[280px]" />
                 <div className="flex items-center gap-4 place-content-between lg:place-self-end">

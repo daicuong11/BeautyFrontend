@@ -7,7 +7,7 @@ const locations = {
     'bottom-end': 'top-[calc(100%+8px)] left-0',
 };
 
-const ModalDropDown = ({ open, onClose, isShowCloseBtn = false, location = 'bottom', children }) => {
+const ModalDropDown = ({ open, onClose, isShowCloseBtn = false, location = 'bottom', children, className = '' }) => {
 
     const modalRef = useRef();
     let css = ``;
@@ -36,8 +36,9 @@ const ModalDropDown = ({ open, onClose, isShowCloseBtn = false, location = 'bott
     return (
         <div onClick={(e) => e.stopPropagation()} ref={modalRef} className={` absolute
                 bg-white rounded-xl shadow-[0_-2px_16px_2px_rgba(0,0,0,0.2)] p-1 transition-all overflow-hidden
-                ${open ? 'scale-100 opacity-100 translate-y-0 block z-20' : 'scale-90 opacity-0 -translate-y-5 hidden z-0'}
+                ${open ? 'scale-100 opacity-100 translate-y-0 visible z-30' : 'scale-90 opacity-0 -translate-y-5 invisible z-0'}
                 ${css}
+                ${className}
                 `}>
             {isShowCloseBtn && (
                 <button onClick={onClose} className="absolute p-1 text-gray-400 bg-white rounded-lg top-2 right-2 hover:bg-gray-50 hover:text-gray-600">

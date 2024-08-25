@@ -45,7 +45,7 @@ const AdminLayout = ({ children }) => {
             </div>
             <div className="relative flex-1 transition-all">
                 <Header />
-                <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] bg-gray-50">
+                <div className="h-[calc(100vh-68px)] overflow-y-auto mt-[68px] bg-gray-300">
                     {children}
                 </div>
             </div>
